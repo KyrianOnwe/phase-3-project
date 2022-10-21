@@ -67,4 +67,9 @@ class ApplicationController < Sinatra::Base
     upd.to_json
   end
 
+  get "/find_by_name/:name" do
+    usr = User.find_by_name(params[:name])
+    thedos = usr.show_todos
+    thedos.to_json
+  end
 end
