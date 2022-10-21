@@ -26,4 +26,16 @@ class ApplicationController < Sinatra::Base
     todos.to_json
   end
 
+  post "/todos" do
+    new_todo = Todo.create(
+      task: params[:task],
+      due_date: params[:due_date],
+      assigned_by: params[:assigned_by],
+      completed: params[:completed],     
+      status: params[:status],      
+      user_id: params[:user_id]
+    )
+    new_todo.to_json
+  end
+
 end
