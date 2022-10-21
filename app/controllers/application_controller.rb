@@ -38,4 +38,12 @@ class ApplicationController < Sinatra::Base
     new_todo.to_json
   end
 
+  patch "/todos/:id" do
+    upd = Todo.find(params[:id])
+    upd.update(
+      user_id: params[:user_id]
+    )
+    upd.to_json
+  end
+
 end
