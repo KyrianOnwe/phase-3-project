@@ -26,10 +26,12 @@ User.create(
         password: "Yoyoyo"
     )
 end
+
 50.times do
     Todo.create(
         task: Faker::Hobby.activity,
         due_date: Faker::Date.between(from: 2.days.ago, to: Date.today),
+        user_id: rand(8),
         status: "Assigned",
         completed: false,
         assigned_by: "Marty McFly"
