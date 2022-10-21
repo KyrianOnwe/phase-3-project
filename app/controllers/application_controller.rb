@@ -15,9 +15,14 @@ class ApplicationController < Sinatra::Base
     users = User.find(params[:id])
     users.to_json
   end 
-  
+
   get "/todos" do
     todos = Todo.all
+    todos.to_json
+  end
+
+  get "/todos/:id" do
+    todos = Todo.find(params[:id])
     todos.to_json
   end
 
