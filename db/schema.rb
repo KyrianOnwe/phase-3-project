@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_21_152449) do
+ActiveRecord::Schema.define(version: 2022_10_21_152809) do
 
   create_table "todos", force: :cascade do |t|
     t.string "task"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2022_10_21_152449) do
     t.string "user_name"
     t.string "role"
     t.string "location"
+    t.string "password"
   end
 
 end
