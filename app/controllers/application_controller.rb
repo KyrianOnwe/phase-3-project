@@ -54,4 +54,10 @@ class ApplicationController < Sinatra::Base
     upd.to_json
   end
 
+  delete "/todos/:id" do
+    del = Todo.find(params[:id])
+    del.destroy
+    del.to_json
+  end
+
 end
