@@ -72,4 +72,13 @@ class ApplicationController < Sinatra::Base
     thedos = usr.show_todos
     thedos.to_json
   end
+
+  post "/users" do
+    new_user = Todo.create(
+      name: params[:name],
+      email: params[:email],
+      password: params[:password]
+    )
+    new_user.to_json
+  end
 end
