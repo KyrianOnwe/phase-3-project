@@ -77,6 +77,7 @@ class ApplicationController < Sinatra::Base
     new_user = Todo.create(
       name: params[:name],
       email: params[:email],
+      role: params[:role],
       password: params[:password]
     )
     new_user.to_json
