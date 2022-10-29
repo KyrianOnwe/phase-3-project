@@ -68,8 +68,8 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/find_by_name/:name" do
-    usr = User.find_by_name(params[:name])
-    thedos = usr.show_todos
+    usr = User.find_by(name: params[:name])
+    thedos = usr.all_todos
     thedos.to_json
   end
 
