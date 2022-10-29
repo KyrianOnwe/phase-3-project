@@ -74,7 +74,7 @@ class ApplicationController < Sinatra::Base
   end
 
   post "/users" do
-    new_user = Todo.create(
+    new_user = User.create(
       name: params[:name],
       email: params[:email],
       role: params[:role],
