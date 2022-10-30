@@ -67,13 +67,13 @@ class ApplicationController < Sinatra::Base
     upd.to_json
   end
 
-  get "/find_by_name/:name" do
+  get "/users/find_by/:name" do
     usr = User.find_by(name: params[:name])
     thedos = usr.all_todos
     thedos.to_json
   end
 
-  post "/users" do
+  post "/users/post" do
     new_user = User.create(
       name: params[:name],
       email: params[:email],
