@@ -3,5 +3,5 @@ class User < ActiveRecord::Base
 
     def all_todos
         self.todos.all
-    end
+    end    
 end
