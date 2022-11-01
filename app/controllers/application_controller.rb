@@ -27,15 +27,17 @@ class ApplicationController < Sinatra::Base
   end
 
   post "/todos" do
+    user = User.find_by(name: params[:user_id])
     new_todo = Todo.create(
       task: params[:task],
       due_date: params[:due_date],
       assigned_by: params[:assigned_by],
       completed: params[:completed],     
       status: params[:status],      
-      user_id: params[:user_id]
+      user_id: user.id
     )
-    new_todo.to_json
+    all = Todo.all
+    all.to_json
   end
 
   patch "/todos/:id" do
@@ -43,7 +45,8 @@ class ApplicationController < Sinatra::Base
     upd.update(
       user_id: params[:user_id]
     )
-    upd.to_json
+    all = Todo.all
+    all.to_json
   end
 
   patch "/todos/status/:id" do
@@ -51,20 +54,23 @@ class ApplicationController < Sinatra::Base
     upd.update(
       status: params[:status]
     )
-    upd.to_json
+    all = Todo.all
+    all.to_json
   end
 
   delete "/todos/:id" do
     del = Todo.find(params[:id])
     del.destroy
-    del.to_json
+    all = Todo.all
+    all.to_json
   end
 
   patch "/todos/completed/:id" do
     upd = Todo.find(params[:id])
     upd.update(completed: params[:completed])
     upd.update(status: params[:status])
-    upd.to_json
+    all = Todo.all
+    all.to_json
   end
 
   get "/users/find_by/:name" do
