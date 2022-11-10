@@ -4,4 +4,11 @@ class User < ActiveRecord::Base
     def all_todos
         self.todos.all
     end    
+
+    def full_all_todos
+        users = User.all
+        users.map do |u|
+            u.all_todos
+        end
+    end
 end
