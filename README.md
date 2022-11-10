@@ -1,6 +1,6 @@
 # The Flatiron Terrific Todos frontend server app
 
-This app has been created for use with a team where accountability for performance of tasks is crucial.  Adminsistrators and higher can create, reassign, and delete tasks.  Users lower than admninistrator can read others' tasks, read and update their own tasks.  The app keeps track of the current user and automatically inputs that user's id, stamping them as responsible for creation and management of the tasks.
+This app has been created for use with a group where accountability for performance of tasks is crucial.  Any user can be assigned a todo.  Anyone can view, update, create, or delete a todo.  Users can be added and assigned tasks by anyone with access to this app and individual users' specific todos can be found via search
 
 
 
@@ -36,7 +36,7 @@ Sinatra backend API, where a user can:
 
 ## Getting Started
 
-Fork and clone this repo, along with it's associated front end repo [here][https://github.com/KyrianOnwe/my-app-frontend].  `cd` into the local repo folder and run `bundle install` to install all the dependencies for this app.  This backend is prepopulated with data for easier review and run through of core functionality.
+Fork and clone this repo, along with it's associated front end repo [here][https://github.com/KyrianOnwe/my-app-frontend].  `cd` into the local repo folder and run `bundle install` to install all the dependencies for this app.  This backend is prepopulated with data for easier review and run through of core functionality.  To remove the seeded data, run `rake db:drop` from the local backend terminal.
 
 ## How to use
 
